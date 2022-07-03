@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from links.serizliers import LinkSerializer
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
+from rest_framework.generics import CreateAPIView
+from rest_framework.generics import *
 from .models import *
-from .serizliers import *
-
-
 # Create your views here.
 class PostListApi(ListAPIView):
     queryset = Link.objects.filter(active=True)
